@@ -38,8 +38,11 @@
     fatal:   'rainbow'
   };
 
-  function logprinter(log) {
+  function logConsole(log) {
     return ['[' + log.date.grey + ']', '[' + log.namespace[colors[log.level]] + ']', prettyprint(log.args)].join(' ');
+  }
+  function logFile(log) {
+    return ['[' + log.date + ']', '[' + log.namespace + ']', prettyprint(log.args)].join(' ');
   }
 
   app.configure(function() {
@@ -53,11 +56,12 @@
 
   app.post('/', function(req, res) {
     var body = req.body;
-    var logs = (Array.isArray(body) ? body : [body]).map(logprinter).join('\n');
+    var logs2Console = (Array.isArray(body) ? body : [body]).map(logConsole).join('\n');
+    var logs2File    = (Array.isArray(body) ? body : [body]).map(logFile).join('\n');
 
     // not optimized nor secure but who cares...
-    console.log(logs);
-    fs.appendFileSync(filename, logs);
+    console.log(logs2Console);
+    fs.appendFileSync(filename, logs2File+'\n');
     res.send(200);
   });
 
