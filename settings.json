@@ -1,0 +1,6 @@
+{
+  "LOGGER_NAME": "remote",
+  "LOGGER_OPTIONS": {
+    "url": "http://192.168.1.92:8081"
+  }
+}
