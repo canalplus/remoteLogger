@@ -1,7 +1,14 @@
 ![](https://github.com/canalplus/telegraph/raw/master/icon.gif)
 
-Telegrpah is a remote logger utility to allow you to send logs from your program to a remote server.
-Logs will be saved in a timestamped file (in <code>server/logs</code> directory)
+Telegraph is a small remote logger utility that allow you to send logs from your programs to a remote server with verbosity levels (info, warn, error, ...)
+
+The utility is made with:
+* a log utility to add to your programs (see the example),
+* an express based log server that will receive the logs.
+
+Logs will be saved in a timestamped text file (in <code>server/logs</code> directory) and displayed in the log server console.
+
+Logs are sent with Ajax calls.
 
 ## Install
 
