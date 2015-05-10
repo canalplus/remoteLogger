@@ -1,6 +1,6 @@
-# remoteLogger
+![](https://github.com/canalplus/telegraph/raw/master/icon.gif)
 
-This is a remote logger utility to allow you to send logs from your program to a remote server.
+Telegrpah is a remote logger utility to allow you to send logs from your program to a remote server.
 Logs will be saved in a timestamped file (in <code>server/logs</code> directory)
 
 ## Install
@@ -42,9 +42,13 @@ Will output on server console:
 ```
 % npm start
 
-> remoteLogger@0.0.1 start /Users/jtbonhomme/Developments/r7/remoteLogger
+> telegraph@0.0.1 start ~/r7/telegraph
 > node server/index.js
 
 Listening on port 8081
 [2015-05-09T21:34:39.741Z] [test] this is a test 2015 another argument
 ```
+
+# Contributors
+
+* [Jinroh](https://github.com/jinroh)
