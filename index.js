@@ -46,12 +46,11 @@
       };
   
       request(options, function(err, msg, body){
-        if(err) {
+        if(err || msg.status >= 300) {
           fail();
         }
-        else {
-          if(msg.status >= 300) { return fail(); }
-          if (flush.length) { setTimeout(send, interval); }
+        else if (flush.length) {
+          setTimeout(send, interval);
         }
       });
     }
