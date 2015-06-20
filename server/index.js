@@ -1,6 +1,7 @@
 (function(){
   'use strict';
   require('colors');
+  var bodyParser = require('body-parser');
 
   function pad(n) { return n < 10 ? '0' + n : n; }
 
@@ -46,7 +47,8 @@
   }
 
   app.configure(function() {
-    app.use(express.bodyParser());
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true });
     app.use(cors);
   });
 
